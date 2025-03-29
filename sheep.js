@@ -72,17 +72,33 @@ export class Sheep {
 
         return {
             y: 0,
-            rotation: 0
+            rotation: 0,
         };
     }
 
     getY2(x, dot) {
         const total = 200;
-        let pt = this.getPointOnQuad(dot.x1, dot.y1, dot.x2, dot.y2, dot.x3, dot.y3, 0);
+        let pt = this.getPointOnQuad(
+            dot.x1,
+            dot.y1,
+            dot.x2,
+            dot.y2,
+            dot.x3,
+            dot.y3,
+            0
+        );
         let prevX = pt.x;
         for (let i = 1; i < total; i++) {
             const t = i / total;
-            pt = this.getPointOnQuad(dot.x1, dot.y1, dot.x2, dot.y2, dot.x3, dot.y3, t);
+            pt = this.getPointOnQuad(
+                dot.x1,
+                dot.y1,
+                dot.x2,
+                dot.y2,
+                dot.x3,
+                dot.y3,
+                t
+            );
 
             if (x >= prevX && x <= pt.x) {
                 return pt;
@@ -99,7 +115,7 @@ export class Sheep {
     getPointOnQuad(x1, y1, x2, y2, x3, y3, t) {
         const tx = this.quadTangent(x1, x2, x3, t);
         const ty = this.quadTangent(y1, y2, y3, t);
-        const rotation = -Math.atan2(tx, ty) + (90 * Math.PI / 180);
+        const rotation = -Math.atan2(tx, ty) + (90 * Math.PI) / 180;
         return {
             x: this.getQuadValue(x1, x2, x3, t),
             y: this.getQuadValue(y1, y2, y3, t),
@@ -110,5 +126,4 @@ export class Sheep {
     quadTangent(a, b, c, t) {
         return 2 * (1 - t) * (b - a) + 2 * (c - b) * t;
     }
-
 }
