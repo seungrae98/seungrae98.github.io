@@ -1,4 +1,4 @@
-import { Canvas } from './Canvas.js';
+import { Canvas } from '../../../canvas.js';
 import { Hill } from "./hill.js";
 import { SheepController } from "./sheep-controller.js";
 

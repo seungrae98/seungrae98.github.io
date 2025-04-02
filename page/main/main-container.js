@@ -1,6 +1,6 @@
-import { Container } from "./container.js";
+import { Container } from "../../container.js";
 
-class PostContainer {
+class MainContainer {
     constructor() {
         this.posts = [
             {
@@ -45,7 +45,7 @@ class PostContainer {
 
     init() {
         const containerInstance = new Container({
-            id: "post-container",
+            id: "main-container",
             className: "custom-class-if-needed"
         });
 
@@ -67,5 +67,4 @@ class PostContainer {
     }
 }
 
-new PostContainer();
-
+new MainContainer();
