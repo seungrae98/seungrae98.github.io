@@ -1,7 +1,8 @@
 import { Container } from "../../component/container.js";
 
-class PostContainer {
-    constructor() {
+export class PostContainer {
+    constructor(sheepCanvas) {
+        this.sheepCanvas = sheepCanvas;
         this.posts = [
             {
                 title: "첫 번째 이야기",
@@ -66,6 +67,4 @@ class PostContainer {
         });
     }
 }
-
-new PostContainer();
 
