@@ -1,4 +1,4 @@
-import { Container } from "../../container.js";
+import { Container } from "../../component/container.js";
 
 class MainContainer {
     constructor() {
