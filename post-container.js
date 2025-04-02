@@ -1,3 +1,5 @@
+import { Container } from "./container.js";
+
 class PostContainer {
     constructor() {
         this.posts = [
@@ -42,10 +44,12 @@ class PostContainer {
     }
 
     init() {
-        this.container = document.createElement("div");
-        this.container.id = "post-container";
-        document.body.appendChild(this.container);
+        const containerInstance = new Container({
+            id: "post-container",
+            className: "custom-class-if-needed"
+        });
 
+        this.container = containerInstance.getElement();
         this.renderPosts();
     }
 
