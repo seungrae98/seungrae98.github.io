@@ -33,13 +33,18 @@ canvas {
     align-items: start;
 }
 
-.post {
-    width: 600px;
+button.navigation-button {
+    margin: 40px auto;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff79b0;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-    padding: 20px;
-    margin: 20px;
-
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+button.navigation-button:hover {
+    background-color: #e8619b;
 }
