@@ -1,13 +1,13 @@
+import { Canvas } from './Canvas.js';
 import { Hill } from "./hill.js";
-
 import { SheepController } from "./sheep-controller.js";
 
 class SheepCanvas {
     constructor() {
-        console.log("🐑 app.js loaded");
-        this.canvas = document.createElement("canvas");
-        this.ctx = this.canvas.getContext("2d");
-        document.body.appendChild(this.canvas);
+        console.log("🐑 sheep-canvas.js loaded");
+        this.canvasManager = new Canvas();
+        this.canvas = this.canvasManager.getCanvas();
+        this.ctx = this.canvasManager.getContext();
 
         this.hills = [
             new Hill("#FD6BEA", 0.2, 12, 8, 3, 7),
@@ -27,9 +27,7 @@ class SheepCanvas {
         this.stageWidth = document.body.clientWidth;
         this.stageHeight = document.body.clientHeight;
 
-        this.canvas.width = this.stageWidth * 2;
-        this.canvas.height = this.stageHeight * 2;
-        this.ctx.scale(2, 2);
+        this.canvasManager.resize(this.stageWidth, this.stageHeight);
 
         for (let i = 0; i < this.hills.length; i++) {
             this.hills[i].resize(this.stageWidth, this.stageHeight);
@@ -41,7 +39,8 @@ class SheepCanvas {
     animate(t) {
         requestAnimationFrame(this.animate.bind(this));
 
-        this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+        this.ctx.fillStyle = '#ffcaec';
+        this.ctx.fillRect(0, 0, this.stageWidth, this.stageHeight);
 
         let dots;
         for (let i = 0; i < this.hills.length; i++) {
