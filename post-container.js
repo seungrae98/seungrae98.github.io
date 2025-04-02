@@ -1,4 +1,4 @@
-class PostApp {
+class PostContainer {
     constructor() {
         this.posts = [
             {
@@ -63,5 +63,5 @@ class PostApp {
     }
 }
 
-new PostApp();
+new PostContainer();
 

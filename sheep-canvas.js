@@ -2,7 +2,7 @@ import { Hill } from "./hill.js";
 
 import { SheepController } from "./sheep-controller.js";
 
-class App {
+class SheepCanvas {
     constructor() {
         console.log("🐑 app.js loaded");
         this.canvas = document.createElement("canvas");
@@ -53,5 +53,5 @@ class App {
 }
 
 window.onload = () => {
-    new App();
+    new SheepCanvas();
 };
