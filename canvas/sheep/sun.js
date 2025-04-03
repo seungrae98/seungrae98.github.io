@@ -32,11 +32,12 @@ export class Sun {
         ctx.restore();
     }
 
-    sunRise() {
-        this.targetY = this.sunriseY;
-    }
-
-    sunSet() {
-        this.targetY = this.sunsetY;
+    sunRise(isDay) {
+        if (isDay) {
+            this.targetY = this.sunriseY;
+        } else {
+            this.targetY = this.sunsetY;
+        }
+        
     }
 }

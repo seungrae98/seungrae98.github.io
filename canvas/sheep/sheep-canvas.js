@@ -26,12 +26,8 @@ export class SheepCanvas {
         requestAnimationFrame(this.animate.bind(this));
     }
 
-    sunRise() {
-        this.sun.sunRise();
-    }
-
-    sunSet() {
-        this.sun.sunSet();
+    sunRise(isDay) {
+        this.sun.sunRise(isDay);
     }
 
     resize() {

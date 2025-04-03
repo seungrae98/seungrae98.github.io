@@ -38,7 +38,7 @@ export class MainContainer {
     
         button.addEventListener("click", () => {
             console.log("해가 떠요");
-            this.sheepCanvas.sunRise();
+            this.sheepCanvas.sunRise(true);
         });
     
         this.container.appendChild(button);
@@ -51,7 +51,7 @@ export class MainContainer {
     
         button.addEventListener("click", () => {
             console.log("해가 져요");
-            this.sheepCanvas.sunSet();
+            this.sheepCanvas.sunRise(false);
         });
     
         this.container.appendChild(button);
