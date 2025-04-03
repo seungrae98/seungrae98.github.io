@@ -37,7 +37,8 @@ export class MainContainer {
         button.className = "navigation-button";
     
         button.addEventListener("click", () => {
-            console.log("해가 떠요")
+            console.log("해가 떠요");
+            this.sheepCanvas.sunRise();
         });
     
         this.container.appendChild(button);
@@ -49,7 +50,8 @@ export class MainContainer {
         button.className = "navigation-button";
     
         button.addEventListener("click", () => {
-            console.log("해가 져요")
+            console.log("해가 져요");
+            this.sheepCanvas.sunSet();
         });
     
         this.container.appendChild(button);

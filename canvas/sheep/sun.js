@@ -1,14 +1,14 @@
 export class Sun {
     constructor() {
-        this.radius = 300;
-        this.x = 100;
+        this.radius = 150;
+        this.x = 250;
 
-        this.baseY = 100;           // 떠 있을 때 기준 높이
-        this.hiddenY = -100;        // 사라진 위치
-        this.y = this.hiddenY;
+        this.sunriseY = 200;
+        this.sunsetY = 1000;
+        this.y = this.sunsetY;
 
-        this.targetY = this.hiddenY;
-        this.speed = 4;             // 올라가거나 내려갈 때 속도
+        this.targetY = this.sunriseY;
+        this.speed = 4;
     }
 
     resize(stageWidth, stageHeight) {
@@ -17,13 +17,12 @@ export class Sun {
     }
 
     update() {
-        // 부드럽게 현재 위치를 targetY로 보간
         const dy = this.targetY - this.y;
-        this.y += dy * 0.05;        // 보간 속도 (값이 작을수록 느림)
+        this.y += dy * 0.05;
     }
 
     draw(ctx, t) {
-        this.update();              // 위치 업데이트
+        this.update();
 
         ctx.save();
         ctx.fillStyle = "#FFD700";
@@ -34,10 +33,10 @@ export class Sun {
     }
 
     sunRise() {
-        this.targetY = this.baseY;
+        this.targetY = this.sunriseY;
     }
 
     sunSet() {
-        this.targetY = this.hiddenY;
+        this.targetY = this.sunsetY;
     }
 }

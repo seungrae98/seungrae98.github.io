@@ -26,6 +26,14 @@ export class SheepCanvas {
         requestAnimationFrame(this.animate.bind(this));
     }
 
+    sunRise() {
+        this.sun.sunRise();
+    }
+
+    sunSet() {
+        this.sun.sunSet();
+    }
+
     resize() {
         this.stageWidth = document.body.clientWidth;
         this.stageHeight = document.body.clientHeight;
