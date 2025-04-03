@@ -35,7 +35,7 @@ export class Moon {
         ctx.save();
         ctx.fillStyle = this.bgcolor;
         ctx.beginPath();
-        ctx.arc(this.x + 40, this.y, this.radius - 30, 0, Math.PI * 2);
+        ctx.arc(this.x + 40, this.y - 20, this.radius - 30, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
     }
