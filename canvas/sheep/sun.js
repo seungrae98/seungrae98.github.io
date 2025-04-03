@@ -25,7 +25,7 @@ export class Sun {
         this.update();
 
         ctx.save();
-        ctx.fillStyle = "#FFD700";
+        ctx.fillStyle = "#ffcc33";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();
