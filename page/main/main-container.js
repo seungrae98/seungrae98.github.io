@@ -4,6 +4,9 @@ export class MainContainer {
     constructor(sheepCanvas) {
         console.log("✅ main-container loaded");
         this.sheepCanvas = sheepCanvas;
+
+        this.isDay = true;
+
         this.init();
     }
 
@@ -16,7 +19,6 @@ export class MainContainer {
         this.container = containerInstance.getElement();
         this.renderNavButton();
         this.renderSunriseButton();
-        this.renderSunsetButton();
     }
 
     renderNavButton() {
@@ -33,25 +35,20 @@ export class MainContainer {
 
     renderSunriseButton() {
         const button = document.createElement("button");
-        button.textContent = "해가 떠요";
+        button.textContent = "Day Night";
         button.className = "navigation-button";
     
         button.addEventListener("click", () => {
-            console.log("해가 떠요");
-            this.sheepCanvas.sunRise(true);
-        });
-    
-        this.container.appendChild(button);
-    }
-
-    renderSunsetButton() {
-        const button = document.createElement("button");
-        button.textContent = "해가 져요";
-        button.className = "navigation-button";
-    
-        button.addEventListener("click", () => {
-            console.log("해가 져요");
-            this.sheepCanvas.sunRise(false);
+            if(this.isDay) {
+                console.log("해가 져요");
+                this.sheepCanvas.sunRise(false);
+                this.isDay = false;
+            } else {
+                console.log("해가 떠요");
+                this.sheepCanvas.sunRise(true);
+                this.isDay = true;
+            }
+            
         });
     
         this.container.appendChild(button);
