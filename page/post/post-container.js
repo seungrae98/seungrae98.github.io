@@ -1,5 +1,8 @@
-class PostApp {
-    constructor() {
+import { Container } from "../../component/container.js";
+
+export class PostContainer {
+    constructor(sheepCanvas) {
+        this.sheepCanvas = sheepCanvas;
         this.posts = [
             {
                 title: "첫 번째 이야기",
@@ -42,10 +45,12 @@ class PostApp {
     }
 
     init() {
-        this.container = document.createElement("div");
-        this.container.id = "post-container";
-        document.body.appendChild(this.container);
+        const containerInstance = new Container({
+            id: "post-container",
+            className: "custom-class-if-needed"
+        });
 
+        this.container = containerInstance.getElement();
         this.renderPosts();
     }
 
@@ -62,6 +67,4 @@ class PostApp {
         });
     }
 }
-
-new PostApp();
 
