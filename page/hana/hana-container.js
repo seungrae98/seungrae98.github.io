@@ -6,7 +6,6 @@ export class HanaContainer {
         console.log("✅ hana-container loaded");
 
         this.data = hanaData;
-
         this.currentIndex = 0;
 
         this.init();
@@ -20,22 +19,22 @@ export class HanaContainer {
 
         this.container = containerInstance.getElement();
 
-        // 설명 텍스트
+        // 텍스트1
         this.label = document.createElement("div");
         this.label.className = "label-text";
         this.container.appendChild(this.label);
 
-        // 정답 버튼
+        // 정답 확인 버튼
         this.answerBtn = document.createElement("button");
         this.answerBtn.textContent = "정답 확인";
         this.answerBtn.className = "navigation-button";
         this.answerBtn.addEventListener("click", this.showAnswer.bind(this));
         this.container.appendChild(this.answerBtn);
 
-        // 정답 출력 영역
+        // 텍스트2 (결과)
         this.resultText = document.createElement("div");
         this.resultText.className = "label-text";
-        this.resultText.textContent = "👇 버튼을 눌러 정답을 확인하세요.";
+        this.resultText.textContent = "버튼을 눌러 정답을 확인하세요.";
         this.container.appendChild(this.resultText);
 
         // 다음 문제 버튼
@@ -68,7 +67,7 @@ export class HanaContainer {
             this.currentIndex++;
             this.showQuestion();
         } else {
-            this.resultText.textContent = "🎉 모든 문제를 완료했습니다!";
+            this.resultText.textContent = "모든 문제 완료";
             this.label.textContent = "";
             this.answerBtn.disabled = true;
             this.nextBtn.disabled = true;
