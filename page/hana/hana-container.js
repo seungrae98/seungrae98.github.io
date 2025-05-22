@@ -6,6 +6,7 @@ export class HanaContainer {
         console.log("✅ hana-container loaded");
 
         this.data = hanaData;
+        this.shuffled = this.shuffleArray(this.data.slice());
         this.currentIndex = 0;
 
         this.init();
@@ -50,20 +51,20 @@ export class HanaContainer {
     }
 
     showQuestion() {
-        const { description } = this.data[this.currentIndex];
+        const { description } = this.shuffled[this.currentIndex];
         this.label.textContent = description;
         this.resultText.textContent = "정답";
         this.resultText.style.color = "#333";
     }
 
     showAnswer() {
-        const { word } = this.data[this.currentIndex];
+        const { word } = this.shuffled[this.currentIndex];
         this.resultText.textContent = word;
         this.resultText.style.color = "#2e7d32";
     }
 
     nextQuestion() {
-        if (this.currentIndex < this.data.length - 1) {
+        if (this.currentIndex < this.shuffled.length - 1) {
             this.currentIndex++;
             this.showQuestion();
         } else {
@@ -72,5 +73,16 @@ export class HanaContainer {
             this.answerBtn.disabled = true;
             this.nextBtn.disabled = true;
         }
+    }
+
+    shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            // 0 이상 i 이하의 무작위 인덱스 선택
+            const j = Math.floor(Math.random() * (i + 1));
+
+            // 요소 교환
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
     }
 }
