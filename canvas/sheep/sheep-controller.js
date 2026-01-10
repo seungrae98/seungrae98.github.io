@@ -1,6 +1,4 @@
-import {
-    Sheep
-} from "./sheep.js";
+import { Sheep } from "./sheep.js";
 
 export class SheepController {
     constructor() {
@@ -8,7 +6,7 @@ export class SheepController {
         this.img.onload = () => {
             this.loaded();
         };
-        this.img.src = '/img/sheep.png';
+        this.img.src = "/img/sheep.png";
 
         this.items = [];
 
@@ -18,7 +16,7 @@ export class SheepController {
 
     resize(stageWidth, stageHeight) {
         this.stageWidth = stageWidth;
-        this.stageHeight = stageHeight
+        this.stageHeight = stageHeight;
     }
 
     loaded() {
@@ -27,9 +25,7 @@ export class SheepController {
     }
 
     addSheep() {
-        this.items.push(
-            new Sheep(this.img, this.stageWidth),
-        );
+        this.items.push(new Sheep(this.img, this.stageWidth));
     }
 
     draw(ctx, t, dots) {

@@ -47,7 +47,7 @@ export class PostContainer {
     init() {
         const containerInstance = new Container({
             id: "post-container",
-            className: "custom-class-if-needed"
+            className: "custom-class-if-needed",
         });
 
         this.container = containerInstance.getElement();
@@ -67,4 +67,3 @@ export class PostContainer {
         });
     }
 }
-

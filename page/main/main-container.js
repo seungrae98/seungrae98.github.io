@@ -13,7 +13,7 @@ export class MainContainer {
     init() {
         const containerInstance = new Container({
             id: "main-container",
-            className: "custom-class-if-needed"
+            className: "custom-class-if-needed",
         });
 
         this.container = containerInstance.getElement();
@@ -25,11 +25,11 @@ export class MainContainer {
         const button = document.createElement("button");
         button.textContent = "📄 다른 페이지로 이동";
         button.className = "navigation-button";
-    
+
         button.addEventListener("click", () => {
             window.location.href = "../post/post.html";
         });
-    
+
         this.container.appendChild(button);
     }
 
@@ -37,9 +37,9 @@ export class MainContainer {
         const button = document.createElement("button");
         button.textContent = "Day Night";
         button.className = "navigation-button";
-    
+
         button.addEventListener("click", () => {
-            if(this.isDay) {
+            if (this.isDay) {
                 console.log("해가 져요");
                 this.sheepCanvas.sunRise(false);
                 this.isDay = false;
@@ -48,9 +48,8 @@ export class MainContainer {
                 this.sheepCanvas.sunRise(true);
                 this.isDay = true;
             }
-            
         });
-    
+
         this.container.appendChild(button);
     }
 }
