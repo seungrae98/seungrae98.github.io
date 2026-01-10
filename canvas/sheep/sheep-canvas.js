@@ -1,4 +1,4 @@
-import { Canvas } from '../../component/canvas.js';
+import { Canvas } from "../../component/canvas.js";
 import { Sun } from "./sun.js";
 import { Moon } from "./moon.js";
 import { Hill } from "./hill.js";
@@ -15,14 +15,14 @@ export class SheepCanvas {
         this.moon = new Moon();
 
         this.hills = [
-            new Hill('#FD6BEA', '#799fc4', 0.2, 12, 8, 3, 7),
-            new Hill('#FF59C2', '#9dbbd5', 0.5, 8, 8, 1, 6),
-            new Hill('#FF4674', '#d4dae6', 1.4, 6, 8, 0, 4),
+            new Hill("#FD6BEA", "#799fc4", 0.2, 12, 8, 3, 7),
+            new Hill("#FF59C2", "#9dbbd5", 0.5, 8, 8, 1, 6),
+            new Hill("#FF4674", "#d4dae6", 1.4, 6, 8, 0, 4),
         ];
 
         this.sheepController = new SheepController();
 
-        this.skyColor = '#ffcaec'
+        this.skyColor = "#ffcaec";
 
         window.addEventListener("resize", this.resize.bind(this), false);
         this.resize();
@@ -34,10 +34,10 @@ export class SheepCanvas {
         this.sun.sunRise(isDay);
         this.moon.sunRise(isDay);
 
-        if(isDay) {
-            this.skyColor = '#ffcaec';
+        if (isDay) {
+            this.skyColor = "#ffcaec";
         } else {
-            this.skyColor = '#4a6171';
+            this.skyColor = "#4a6171";
         }
 
         for (let i = 0; i < this.hills.length; i++) {

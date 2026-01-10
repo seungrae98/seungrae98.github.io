@@ -9,7 +9,7 @@ export class Moon {
 
         this.targetY = this.moonsetY;
         this.speed = 4;
-        this. bgcolor = '#4a6171';
+        this.bgcolor = "#4a6171";
     }
 
     resize(stageWidth, stageHeight) {
@@ -26,7 +26,7 @@ export class Moon {
         this.update();
 
         ctx.save();
-        ctx.fillStyle = '#E8F5FF';
+        ctx.fillStyle = "#E8F5FF";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();
@@ -43,11 +43,10 @@ export class Moon {
     sunRise(isDay) {
         if (isDay) {
             this.targetY = this.moonsetY;
-            this.bgcolor = '#ffcaec';
+            this.bgcolor = "#ffcaec";
         } else {
             this.targetY = this.moonriseY;
-            this.bgcolor = '#4a6171';
+            this.bgcolor = "#4a6171";
         }
-        
     }
 }

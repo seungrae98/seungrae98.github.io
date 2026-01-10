@@ -38,6 +38,5 @@ export class Sun {
         } else {
             this.targetY = this.sunsetY;
         }
-        
     }
 }
